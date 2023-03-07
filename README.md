@@ -1,10 +1,8 @@
-# Project: Airport board
+# React Router (test-task)
 
-### [Site link](https://inquisitive-cupcake-a17fab.netlify.app/)
+### [Site link](https://subtle-selkie-09d52e.netlify.app/)
 
 ( Created with *create-react-app* )
-
-Layout support desktop (up-to-1920) version
 
 ### The tech stack is:
 
@@ -13,6 +11,7 @@ Layout support desktop (up-to-1920) version
 - [Sass (Scss)](https://sass-lang.com/)
 - [BEM methodology](https://en.bem.info/methodology/)
 - [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/en/main)
 
 ### Author
 
