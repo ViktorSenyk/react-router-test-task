@@ -1,4 +1,5 @@
 const baseUrl = 'https://api.github.com/users';
+
 const fetchUserData = userName =>
   fetch(`${baseUrl}/${userName}`)
     .then(res => {
