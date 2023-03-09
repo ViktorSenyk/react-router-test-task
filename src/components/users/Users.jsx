@@ -1,23 +1,22 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from '../navigation/Navigation';
 import User from '../user/User';
 
-import './users.scss';
-
 export default function Users() {
-  const { user } = useParams();
   return (
     <div className="page__content">
       <h1>Users</h1>
-      <ul className="navigation">
-        <li className="navigation__item">
-          <Link to="/users/github">Github</Link>
-        </li>
-        <li className="navigation__item">
-          <Link to="/users/facebook">Facebook</Link>
-        </li>
-      </ul>
-      {user ? <User /> : <span>Select a user please</span>}
+      <Navigation
+        linksInfo={[
+          { title: 'Github', href: '/users/github' },
+          { title: 'Facebook', href: '/users/facebook' },
+        ]}
+      />
+      <Routes>
+        <Route path="/:userId" element={<User />} />
+        <Route path="/" element={<span>Select a user please</span>} />
+      </Routes>
     </div>
   );
 }

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import fetchUserData from './user.gateway';
+import fetchUserData from '../../gateway/user';
 
 import './user.scss';
 
 export default function User() {
-  const { user } = useParams();
+  const { userId } = useParams();
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetchUserData(user).then(userData => setUserData(userData));
-    return setUserData(null);
-  }, [user]);
+    fetchUserData(userId).then(userData => setUserData(userData));
+  }, [userId]);
 
   return !userData ? null : (
     <div className="user">

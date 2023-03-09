@@ -1,25 +1,21 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import Users from './components/users/Users';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './components/navigation/Navigation';
 import Home from './components/home/Home';
-
-import './app.scss';
+import Users from './components/users/Users';
 
 export default function App() {
   return (
     <section className="page">
-      <ul className="navigation">
-        <li className="navigation__item">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="navigation__item">
-          <Link to="/users">Users</Link>
-        </li>
-      </ul>
+      <Navigation
+        linksInfo={[
+          { title: 'Home', href: '/' },
+          { title: 'Users', href: '/users' },
+        ]}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/users/:user" element={<Users />} />
+        <Route path="/users/*" element={<Users />} />
         <Route path="*" element={<h1>Not found!</h1>} />
       </Routes>
     </section>
